@@ -1,11 +1,13 @@
-import java.awt.*;
-import java.awt.event.*;
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.FlowLayout;
 
-public class RPSVisual extends Frame implements ActionListener {
+public class RPSVisual extends JFrame implements ActionListener {
 
   private String result;
-  private TextField displayResult;
-  private Button rock, paper, scissors;
+  private JTextField displayResult;
+  private JButton rock, paper, scissors;
   RPSGameLogic game = new RPSGameLogic();
 
   public RPSVisual() {
@@ -13,10 +15,10 @@ public class RPSVisual extends Frame implements ActionListener {
     setLayout(new FlowLayout());
 
     // "Select a move" text
-    add(new Label("Select a move"));
+    add(new JLabel("Select a move"));
 
     // Rock Button
-    rock = new Button("Rock");
+    rock = new JButton("Rock");
     add(rock);
     rock.addActionListener(new ActionListener() { // upon button hit
       @Override
@@ -28,7 +30,7 @@ public class RPSVisual extends Frame implements ActionListener {
   );
 
     // Paper Button
-    paper = new Button("Paper");
+    paper = new JButton("Paper");
     add(paper);
     paper.addActionListener(new ActionListener() {
       @Override
@@ -40,7 +42,7 @@ public class RPSVisual extends Frame implements ActionListener {
   );
 
     // Scissors Button
-    scissors = new Button("Scissors");
+    scissors = new JButton("Scissors");
     add(scissors);
     scissors.addActionListener(new ActionListener() {
       @Override
@@ -53,7 +55,7 @@ public class RPSVisual extends Frame implements ActionListener {
 
     // displayResults text field (displays rpsLogic return string)
     System.out.println(result);
-    displayResult = new TextField(result, 30);
+    displayResult = new JTextField(result, 30);
     displayResult.setEditable(false);
     add(displayResult);
 
@@ -69,9 +71,9 @@ public class RPSVisual extends Frame implements ActionListener {
     displayResult.setText(result);
   }
 
+  // auto-generated stub
   @Override
   public void actionPerformed(ActionEvent e) {
-    // TODO Auto-generated method stub
 
   }
 }

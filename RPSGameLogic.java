@@ -1,22 +1,27 @@
 public class RPSGameLogic {
 
+private String computerGuess;
+
   // computer makes random guess
   public String randomChoice() {
-    String guess;
 
     // generates random # b/t 0 to 2
     int random = (int)(Math.random() * 3);
 
     // assigns guess to random value
     if (random == 2) {
-      guess = "rock";
+      computerGuess = "rock";
     } else if (random == 1) {
-      guess = "paper";
+      computerGuess = "paper";
     } else {
-      guess = "scissors";
+      computerGuess = "scissors";
     }
 
-    return guess;
+    return computerGuess;
+  }
+
+  public String getComputerGuess() {
+    return computerGuess;
   }
 
   // RPS game logic using nested-ifs
